@@ -1,0 +1,7 @@
+version: '3.6'
+
+services:
+  test:
+    image: inleague/cfswarm-commandbox
+    build:
+      context: ./
