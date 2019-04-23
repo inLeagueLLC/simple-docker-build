@@ -2,6 +2,6 @@ version: '3.6'
 
 services:
   test:
-    image: inleague/cfswarm-commandbox
+    image: myDockerHubUsername/cfswarm-commandbox
     build:
       context: ./
