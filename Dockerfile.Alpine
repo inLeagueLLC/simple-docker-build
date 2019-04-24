@@ -11,11 +11,10 @@ FROM ortussolutions/commandbox:alpine
 LABEL maintainer "Samuel Knowlton <sam@inleague.org>"
 LABEL repository "https://github.com/inLeagueLLC/simple-docker-build"
 
-# 2) Get the package list; install nano; delete the package list archive. We'll write it on two lines for better readability, which can help if we're installing a lot of packages
-RUN apk update && apk add nano && \
-    rm -f /var/cache/apk/*
+# 2) Get the package list; install nano; delete the package list archive. We don't need to delete the cache since we're using the --no-cache option
+RUN apk add --no-cache nano
 
-# 3) Install Lucee Extensions. The format is a little clunky but likely to be smoother with Lucee 5.3 or 6:
+# 3) Install Lucee Extensions. The format is a little clunky but likely to be smoother with Lucee 6:
 # UUID (Package ID);name=Name Of Extension;version=bundle.version.number (,[UUID;name;version])
 # These are available from https://download.lucee.org
 # We'll install the Microsoft SQL Server JDBC drivers, the Lucee Administrator, and the PDF extension.

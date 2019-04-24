@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   cfswarm-cfml-alpine:
-    image: myDockerHubUsername/cfswarm-commandbox:alpine
+    image: mydockerhubusername/cfswarm-commandbox:alpine
     build:
       context: ./
       dockerfile: Dockerfile.Alpine
